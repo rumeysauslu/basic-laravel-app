@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     protected $guarded = [];
-    use HasFactory;
+
+  public function user()
+  {
+    return $this->hasOne('\App\Models\User', 'id', 'user_id');
+  }
 }

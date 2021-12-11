@@ -42,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /** relations */
+
+    public function books(){
+      return $this->hasMany('\App\Models\Book', 'user_id', 'id');
+    }
 }
